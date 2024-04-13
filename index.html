@@ -39,7 +39,6 @@
             margin: 10px; 
         }
 
-       
         @keyframes colorful {
             0%   { color: red; }
             25%  { color: rgb(106, 223, 209); }
@@ -63,10 +62,27 @@
             <button class="btn" onclick="desvia(this)" onmouseover="desvia(this)">NÃO</button>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0"></script>
     <script>
         function sim() {
             alert("Você aceitouuu! :D");
-            location.href = "https://www.youtube.com/watch?v=izGwDsrQ1eQ&ab_channel=georgemichaelVEVO"; // Example redirect
+            // Confetti and fireworks effect
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+            confetti({
+                angle: 120,
+                spread: 55,
+                particleCount: 100,
+                origin: { y: 0.6 }
+            });
+
+            // Delay redirect by 5 seconds to enjoy the confetti
+            setTimeout(function() {
+                location.href = "https://www.youtube.com/watch?v=izGwDsrQ1eQ&ab_channel=georgemichaelVEVO"; // Example redirect
+            }, 3000); 
         }
 
         function desvia(btn) {
